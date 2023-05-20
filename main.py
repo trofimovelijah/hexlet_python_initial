@@ -35,11 +35,11 @@ for key in CURRENCIES:
 # 4.
 def input_currency():
     while True:
-        selected_currency = input("Введите имеющуюся валюту: ")
-        if selected_currency not in CURRENCIES.keys():
+        selected_currency2 = input("Введите имеющуюся валюту: ")
+        if selected_currency2 not in CURRENCIES.keys():
             print('Вы ввели неверный код валюты')
         else:
-            return selected_currency
+            return selected_currency2
 
 
 selected_currency = input_currency()
@@ -48,11 +48,11 @@ selected_currency = input_currency()
 # 5.
 def input_amount():
     while True:
-        selected_amount = float(input("Введите имеющуюся сумму: "))
-        if selected_amount <= 0:
+        selected_amount2 = float(input("Введите имеющуюся сумму: "))
+        if selected_amount2 <= 0:
             print("Укажите сумму больше 0 для конвертации")
         else:
-            return selected_amount
+            return selected_amount2
 
 
 selected_amount = input_amount()
@@ -61,16 +61,15 @@ selected_amount = input_amount()
 # 6.
 def input_conversion_currency():
     while True:
-        exchanged_currency = input("Выберите валюту для конвертации: ")
-        if exchanged_currency not in CURRENCIES.keys():
+        exchanged_currency2 = input("Выберите валюту для конвертации: ")
+        if exchanged_currency2 not in CURRENCIES.keys():
             print("Вы ввели неверный код валюты")
         else:
-            return exchanged_currency
+            return exchanged_currency2
 
 
 exchanged_currency = input_conversion_currency()
 
 # 7.
-# def calculation_amount(user_currency, conversion_currency, current_amount):
 converted_amount = CURRENCIES.get(selected_currency) / CURRENCIES.get(exchanged_currency) * selected_amount
 print(f"Итого: {round(converted_amount, 2)} {exchanged_currency}")
